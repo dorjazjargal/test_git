@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <!-- <script src="test.js"></script> -->
+</head>
+
+<body>
+  <script>
+
+    let workRule = 'Зарим хүмүүс Ажлыг дүрмийг зөвхөн GOOGLE-ийн талаарх ном гэж бодож байж магад.Энэ үнэн,гэхдээ үүгээр зогсохгүй энэ бол ямар ч байгууллага ажилчдаасаа хйимгийн ухаалаг шийдвэрүүдийг гаргуулж байх тогтолцоог хэрхэн бий болгох талаарх ном юм.Ажлын дүрэм! ном нь бодит туршлага дээр суурилсан гарын авлага төдийгүй маргашгүй зарчмууд нв албан ажлын ертөнцийг захирах нь дамжиггүй биз ээ. - Жеффи Пеффер';
+    let overUsedWords = ['ном', 'энэ'];
+    let weakWords = ['нь', 'юм', 'гэж'];
+
+    let workRuleWords = [];
+
+    workRuleWords = workRule.split(" ");
+    console.log(workRuleWords);
+
+    console.log("alham2 array урт= " + workRuleWords.length);
+    //alham3 starts
+    let test = [];
+    let test2 = [];
+    let betterWords = [];
+
+    // workRuleWords.forEach(function (ug) {
+    //   if (ug != weakWords[0]) {
+    //     test.push(ug);
+    //   }
+    // });
+    // test.forEach(function (ug) {
+    //   if (ug != weakWords[1]) {
+    //     test2.push(ug);
+    //   }
+    // });
+    // test2.forEach(function (ug) {
+    //   if (ug != weakWords[2]) {
+    //     betterWords.push(ug);
+    //   }
+    // });
+    function ug_oloh() {
+      for (let i = 0; i < weakWords.length; i++) {
+        workRuleWords.forEach(function (ug, index) {
+          if (ug != weakWords[i]) {
+            betterWords.push(ug);
+            document.write(weakWords[i] + "<br>");
+          }
+          else {
+            console.log(index + " -р индект ижил үг бна. " + workRuleWords[index]);
+          }
+        });
+
+      }
+    }
+    ug_oloh();
+    console.log(betterWords);
+    //alham3 ends
+
+    //starts of alham4
+    let arr1_number = workRuleWords.filter(function (word) {
+      if (word === overUsedWords[0]) {
+        return word;
+      }
+    });
+    console.log("alham4: " + overUsedWords[0] + " гэдэг үг " + arr1_number.length + " удаа орсон бна.");
+
+    arr1_number = workRuleWords.filter(function (word) {
+      if (word === overUsedWords[1]) {
+        return word;
+      }
+    });
+    console.log("alham4: " + overUsedWords[1] + " гэдэг үг " + arr1_number.length + " удаа орсон бна.");
+
+    //alham5
+    workRuleWords = workRule.split(".");
+    console.log("alham5 нийт " + workRuleWords.length + " өгүлбэр бна.");
+
+// alham1: workRule хувьсагчид агуулагдаж буй текстийн үг биртэй ажиллах тул workRuleWords нэртэй массивд үгнүүдийг салгаж хадгал
+// alham2:Массивд хэдэн үг байгааг консол дээр харуулна
+// alham3:Одоо текстэд агуулагдаж байгаа үгсээс weakWords массивд байгаа үгсийг хасъя.
+//Хасахдаа FileSystemEntry() болон includes() аргуудыг ашиглаарай
+// Үлдсэн үгсийг betterWords массивд хадгалж харуулна
+// alham4 overUsedWords массивд хадгалагдаж буй үгс текст дотор хэдэн удаа давтагдаж байгааг тоолно
+// Тоолохдоо foreach() арга ба давтагдсан тоог хадгалах countNom countEne хувьсагчийг ашигла .
+//Тоологдсон утгыг консол дээр ES6 Тэмдэгт мөр залгах бичиглэлээр бичнэ
+// 'Ном' үгийн тоо:?
+// "Энэ " үгийн тоо:?
+// alham5: Одоо хэдэн өгүүлбэр энэ текстэд орсныг тоолно Өгүүлбэрийн төгсгөл цэгийг анхаарах 
+//ба мөн өгүүлбэрийн тоог хадгалах sentenceCount хувьсагыийг зарлаарай.alham5
+// 'Өгүүлбэрийн тоо':?
+  </script>
+</body>
+
+</html>
